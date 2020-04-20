@@ -5,7 +5,7 @@ import(
 	"crypto/tls"
 	"net/http"
 	"encoding/base64"
-	example "github.com/abhatnag/main/example"
+	example "github.com/abhatnag/main/protospb/example_ID"
 )
 
 
@@ -13,7 +13,7 @@ func GetProtos(brandIDs ...string){
 	http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
 	for _,brand :=range brandIDs{
 		message := &example.Message{
-			Text: brand,
+			ID: brand,
 		}
 		data, err := proto.Marshal(message)
 		if err != nil {
