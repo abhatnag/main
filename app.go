@@ -13,7 +13,7 @@ func GetProtos(brandIDs ...string){
 	http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
 	for _,brand :=range brandIDs{
 		message := &example.Message{
-			BrandID: brand,
+			Text: brand,
 		}
 		data, err := proto.Marshal(message)
 		if err != nil {
