@@ -5,7 +5,7 @@ import(
 	"crypto/tls"
 	"net/http"
 	"encoding/base64"
-	example "github.com/abhatnag/main/protospb/example_ID"
+	example "main/protospb/example_ID"
 )
 
 
@@ -21,7 +21,7 @@ func GetProtos(brandIDs ...string){
 				return
 			}
 	urlEncoding := base64.RawURLEncoding.EncodeToString(data)
-	fmt.Printf("For brandID: %s the proto is, %s " ,brand,urlEncoding)
+	fmt.Printf("For brandID: %s the protos = %s \n" ,brand,urlEncoding)
 	}
 	
 }
